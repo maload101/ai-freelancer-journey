@@ -1,7 +1,22 @@
-user_name = input("What is your name? ")
-user_goal = input("What is your main goal with programming? ")
-
+print("Welcome to AI Freelancer Journey!")
 print()
-print(f"Hello, {user_name}!")
-print(f"Your current goal is: {user_goal}")
-print("Let's build useful projects and turn them into real opportunities.")
+print("1 - Introduce myself")
+print("2 - Show my current goal")
+print("3 - Exit")
+print()
+
+choice = input("Choose an option: ")
+
+if choice == "1":
+    name = input("What is your name? ")
+    print(f"Nice to meet you, {name}!")
+
+elif choice == "2":
+    goal = input("What is your current goal? ")
+    print(f"Your current goal is: {goal}")
+
+elif choice == "3":
+    print("Goodbye!")
+
+else:
+    print("Invalid option. Please choose 1, 2, or 3.")
