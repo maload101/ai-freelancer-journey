@@ -20,5 +20,5 @@ Aprender tecnologia de forma prática, criando projetos que possam entrar no por
 - [x] Instalar Git
 - [x] Criar conta no GitHub
 - [x] Configurar VS Code
-- [ ] Criar primeiro programa em Python
-- [ ] Publicar primeiro projeto no GitHub
+- [x] Criar primeiro programa em Python
+- [x] Publicar primeiro projeto no GitHub
