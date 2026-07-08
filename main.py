@@ -32,10 +32,9 @@ def get_current_goal():
 
 
 def set_current_goal():
-    global current_goal
-
-    current_goal = get_current_goal()
-    print(f"Your current goal is now: {current_goal}")
+    goal = get_current_goal()
+    print(f"Your current goal is now: {goal}")
+    return goal
 
 
 def show_current_goal():
@@ -63,7 +62,8 @@ while True:
         introduce_user()
 
     elif choice == "2":
-        set_current_goal()
+        current_goal = set_current_goal()
+
 
     elif choice == "3":
         show_current_goal()
