@@ -15,6 +15,9 @@ def show_main_menu():
     print("5 - Exit")
     print()
 
+def get_menu_choice():
+    choice = input("Choose an option: ").strip()
+    return choice
 
 def get_user_name():
     while True:
@@ -66,7 +69,7 @@ show_welcome_message()
 while True:
     show_main_menu()
 
-    choice = input("Choose an option: ").strip()
+    choice = get_menu_choice()
 
     if choice == "1":
         introduce_user()
