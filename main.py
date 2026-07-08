@@ -15,6 +15,7 @@ def show_main_menu():
     print("5 - Exit")
     print()
 
+
 def get_menu_choice():
     valid_choices = ["1", "2", "3", "4", "5"]
 
@@ -25,6 +26,7 @@ def get_menu_choice():
             return choice
 
         print("Invalid option. Please choose 1, 2, 3, 4, or 5.")
+
 
 def get_user_name():
     while True:
@@ -57,11 +59,11 @@ def set_current_goal():
     return goal
 
 
-def show_current_goal():
-    if current_goal == "":
+def show_current_goal(goal):
+    if goal == "":
         print("You haven't set a current goal yet.")
     else:
-        print(f"Your current goal is: {current_goal}")
+        print(f"Your current goal is: {goal}")
 
 
 def show_study_plan():
@@ -86,7 +88,7 @@ while True:
 
 
     elif choice == "3":
-        show_current_goal()
+        show_current_goal(current_goal)
 
     elif choice == "4":
         show_study_plan()
