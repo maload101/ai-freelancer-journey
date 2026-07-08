@@ -1,6 +1,3 @@
-current_goal = ""
-
-
 def show_welcome_message():
     print("Welcome to AI Freelancer Journey!")
     print("Let's build useful projects and turn them into real opportunities.")
@@ -73,29 +70,33 @@ def show_study_plan():
     print("3 - Build small useful projects")
 
 
-show_welcome_message()
+def main():
+    current_goal = ""
 
-while True:
-    show_main_menu()
+    show_welcome_message()
 
-    choice = get_menu_choice()
+    while True:
+        show_main_menu()
 
-    if choice == "1":
-        introduce_user()
+        choice = get_menu_choice()
 
-    elif choice == "2":
-        current_goal = set_current_goal()
+        if choice == "1":
+            introduce_user()
+
+        elif choice == "2":
+            current_goal = set_current_goal()
+
+        elif choice == "3":
+            show_current_goal(current_goal)
+
+        elif choice == "4":
+            show_study_plan()
+
+        elif choice == "5":
+            print("Goodbye!")
+            break
+
+        print()
 
 
-    elif choice == "3":
-        show_current_goal(current_goal)
-
-    elif choice == "4":
-        show_study_plan()
-
-    elif choice == "5":
-        print("Goodbye!")
-        break
-
-
-    print()
+main()
