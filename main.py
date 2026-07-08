@@ -17,7 +17,7 @@ def show_main_menu():
 
 
 def get_user_name():
-    name = input("What is your name? ")
+    name = input("What is your name? ").strip()
     return name
 
 
@@ -27,7 +27,7 @@ def introduce_user():
 
 
 def get_current_goal():
-    goal = input("What is your current goal? ")
+    goal = input("What is your current goal? ").strip()
     return goal
 
 
