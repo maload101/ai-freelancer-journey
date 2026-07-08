@@ -56,7 +56,7 @@ show_welcome_message()
 while True:
     show_main_menu()
 
-    choice = input("Choose an option: ")
+    choice = input("Choose an option: ").strip()
 
     if choice == "1":
         introduce_user()
