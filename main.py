@@ -16,8 +16,15 @@ def show_main_menu():
     print()
 
 def get_menu_choice():
-    choice = input("Choose an option: ").strip()
-    return choice
+    valid_choices = ["1", "2", "3", "4", "5"]
+
+    while True:
+        choice = input("Choose an option: ").strip()
+
+        if choice in valid_choices:
+            return choice
+
+        print("Invalid option. Please choose 1, 2, 3, 4, or 5.")
 
 def get_user_name():
     while True:
@@ -88,7 +95,5 @@ while True:
         print("Goodbye!")
         break
 
-    else:
-        print("Invalid option. Please choose 1, 2, 3, 4, or 5.")
 
     print()
