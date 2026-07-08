@@ -32,8 +32,13 @@ def introduce_user():
 
 
 def get_current_goal():
-    goal = input("What is your current goal? ").strip()
-    return goal
+    while True:
+        goal = input("What is your current goal? ").strip()
+
+        if goal != "":
+            return goal
+
+        print("Goal cannot be empty. Please try again.")
 
 
 def set_current_goal():
