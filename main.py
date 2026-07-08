@@ -17,8 +17,13 @@ def show_main_menu():
 
 
 def get_user_name():
-    name = input("What is your name? ").strip()
-    return name
+    while True:
+        name = input("What is your name? ").strip()
+
+        if name != "":
+            return name
+
+        print("Name cannot be empty. Please try again.")
 
 
 def introduce_user():
