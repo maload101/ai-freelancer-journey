@@ -22,8 +22,13 @@ def introduce_user():
     print(f"Nice to meet you, {name}!")
 
 
-def set_current_goal():
+def get_current_goal():
     goal = input("What is your current goal? ")
+    return goal
+
+
+def set_current_goal():
+    goal = get_current_goal()
     print(f"Your current goal is: {goal}")
 
 def show_study_plan():
