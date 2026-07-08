@@ -12,8 +12,13 @@ def show_main_menu():
     print()
 
 
-def introduce_user():
+def get_user_name():
     name = input("What is your name? ")
+    return name
+
+
+def introduce_user():
+    name = get_user_name()
     print(f"Nice to meet you, {name}!")
 
 
@@ -22,10 +27,10 @@ def set_current_goal():
     print(f"Your current goal is: {goal}")
 
 def show_study_plan():
-    print(f"Today's study plan:")
-    print(f"1 - Practice Python functions")
-    print(f"2 - Use Git to save progress")
-    print(f"3 - Build small useful projects")
+    print("Today's study plan:")
+    print("1 - Practice Python functions")
+    print("2 - Use Git to save progress")
+    print("3 - Build small useful projects")
 
 show_welcome_message()
 
