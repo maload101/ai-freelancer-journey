@@ -39,6 +39,7 @@ def get_user_name():
 def introduce_user():
     name = get_user_name()
     print(f"Nice to meet you, {name}!")
+    return name
 
 
 def get_current_goal():
@@ -98,7 +99,11 @@ def show_skills_to_learn():
 
 
 def main():
-    current_goal = ""
+    user_profile = {
+    "name": "",
+    "current_goal": ""
+}
+
 
     show_welcome_message()
 
@@ -108,13 +113,12 @@ def main():
         choice = get_menu_choice()
 
         if choice == "1":
-            introduce_user()
+            user_profile["name"] = introduce_user()
 
         elif choice == "2":
-            current_goal = set_current_goal()
-
+            user_profile["current_goal"] = set_current_goal()
         elif choice == "3":
-            show_current_goal(current_goal)
+            show_current_goal(user_profile["current_goal"])
 
         elif choice == "4":
             show_study_plan()
