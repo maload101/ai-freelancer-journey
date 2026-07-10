@@ -8,14 +8,14 @@ def show_main_menu():
     print("1 - Introduce myself")
     print("2 - Set my current goal")
     print("3 - Show my current goal")
-    print("4 - Show today's study plan")
-    print("5 - Show skills to learn")
-    print("6 - Exit")
-    print()
+    print("4 - Show user profile")
+    print("5 - Show today's study plan")
+    print("6 - Show skills to learn")
+    print("7 - Exit")
 
 
 def get_menu_choice():
-    valid_choices = ["1", "2", "3", "4", "5", "6"]
+    valid_choices = ["1", "2", "3", "4", "5", "6", "7"]
 
     while True:
         choice = input("Choose an option: ").strip()
@@ -23,7 +23,7 @@ def get_menu_choice():
         if choice in valid_choices:
             return choice
 
-        print("Invalid option. Please choose 1, 2, 3, 4, 5 or 6.")
+        print("Invalid option. Please choose 1, 2, 3, 4, 5, 6 or 7.")
 
 
 def get_user_name():
@@ -98,6 +98,19 @@ def show_skills_to_learn():
         print(f"{index} - {skills}")
 
 
+def show_user_profile(user_profile):
+    print("User profile:")
+
+    if user_profile["name"] == "":
+        print("Name: not set yet")
+    else:
+        print(f"Name: {user_profile['name']}")
+
+    if user_profile["current_goal"] == "":
+        print("Current goal: not set yet")
+    else:
+        print(f"Current goal: {user_profile['current_goal']}")
+
 def main():
     user_profile = {
     "name": "",
@@ -121,12 +134,15 @@ def main():
             show_current_goal(user_profile["current_goal"])
 
         elif choice == "4":
-            show_study_plan()
+            show_user_profile(user_profile)
 
         elif choice == "5":
-            show_skills_to_learn()
+            show_study_plan()
 
         elif choice == "6":
+            show_skills_to_learn()
+
+        elif choice == "7":
           print("Goodbye!")
           break
 
