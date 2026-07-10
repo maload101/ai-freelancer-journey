@@ -107,10 +107,12 @@ def show_user_profile(user_profile):
     print("User profile:")
 
     for key, value in user_profile.items():
+        formatted_key = format_profile_key(key)
+
         if value == "":
-            print(f"{key}: not set yet")
+            print(f"{formatted_key}: not set yet")
         else:
-            print(f"{key}: {value}")
+            print(f"{formatted_key}: {value}")
 
 def main():
     user_profile = {
