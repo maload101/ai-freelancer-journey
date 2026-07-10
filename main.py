@@ -9,12 +9,13 @@ def show_main_menu():
     print("2 - Set my current goal")
     print("3 - Show my current goal")
     print("4 - Show today's study plan")
-    print("5 - Exit")
+    print("5 - Show skills to learn")
+    print("6 - Exit")
     print()
 
 
 def get_menu_choice():
-    valid_choices = ["1", "2", "3", "4", "5"]
+    valid_choices = ["1", "2", "3", "4", "5", "6"]
 
     while True:
         choice = input("Choose an option: ").strip()
@@ -22,7 +23,7 @@ def get_menu_choice():
         if choice in valid_choices:
             return choice
 
-        print("Invalid option. Please choose 1, 2, 3, 4, or 5.")
+        print("Invalid option. Please choose 1, 2, 3, 4, 5 or 6.")
 
 
 def get_user_name():
@@ -79,6 +80,23 @@ def show_study_plan():
     for index, task in enumerate(study_tasks, start=1):
      print(f"{index} - {task}")
 
+
+def show_skills_to_learn():
+    skills_learning = [
+        "Python",
+        "Git",
+        "APIs",
+        "n8n",
+        "AI automation"
+    
+    ]
+
+    print("Skills I want to learn:")
+
+    for index, skills in enumerate(skills_learning, start=1):
+        print(f"{index} - {skills}")
+
+
 def main():
     current_goal = ""
 
@@ -102,8 +120,11 @@ def main():
             show_study_plan()
 
         elif choice == "5":
-            print("Goodbye!")
-            break
+            show_skills_to_learn()
+
+        elif choice == "6":
+          print("Goodbye!")
+          break
 
         print()
 
