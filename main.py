@@ -99,20 +99,13 @@ def show_skills_to_learn():
 
 
 def show_user_profile(user_profile):
-    name = user_profile["name"]
-    current_goal = user_profile["current_goal"]
-
     print("User profile:")
 
-    if name == "":
-        print("Name: not set yet")
-    else:
-        print(f"Name: {name}")
-
-    if current_goal == "":
-        print("Current goal: not set yet")
-    else:
-        print(f"Current goal: {current_goal}")
+    for key, value in user_profile.items():
+        if value == "":
+            print(f"{key}: not set yet")
+        else:
+            print(f"{key}: {value}")
 
 def main():
     user_profile = {
