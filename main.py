@@ -64,11 +64,20 @@ def show_current_goal(goal):
 
 
 def show_study_plan():
-    print("Today's study plan:")
-    print("1 - Practice Python functions")
-    print("2 - Use Git to save progress")
-    print("3 - Build small useful projects")
+    study_tasks = [
+        "Practice Python functions",
+        "Use Git to save progress",
+        "Build small useful projects",
+        "Practice lists",
+        "Review today's cheat sheet"
 
+    ]
+
+
+    print("Today's study plan:")
+
+    for index, task in enumerate(study_tasks, start=1):
+     print(f"{index} - {task}")
 
 def main():
     current_goal = ""
