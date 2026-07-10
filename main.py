@@ -98,6 +98,11 @@ def show_skills_to_learn():
         print(f"{index} - {skills}")
 
 
+
+def format_profile_key(key):
+    return key.replace("_", " ").capitalize()
+
+
 def show_user_profile(user_profile):
     print("User profile:")
 
