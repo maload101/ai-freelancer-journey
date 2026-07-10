@@ -1,2 +1,2 @@
-Name: Marcello
-Current goal: Learn automation and AI
+name: Marcello
+current_goal: Já bora!
