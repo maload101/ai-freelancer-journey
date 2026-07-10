@@ -10,13 +10,14 @@ def show_main_menu():
     print("3 - Show my current goal")
     print("4 - Show user profile")
     print("5 - Save user profile")
-    print("6 - Show today's study plan")
-    print("7 - Show skills to learn")
-    print("8 - Exit")
+    print("6 - Load user profile")
+    print("7 - Show today's study plan")
+    print("8 - Show skills to learn")
+    print("9 - Exit")
 
 
 def get_menu_choice():
-    valid_choices = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    valid_choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
     while True:
         choice = input("Choose an option: ").strip()
@@ -24,7 +25,7 @@ def get_menu_choice():
         if choice in valid_choices:
             return choice
 
-        print("Invalid option. Please choose 1, 2, 3, 4, 5, 6, 7 or 8.")
+        print("Invalid option. Please choose 1, 2, 3, 4, 5, 6, 7, 8 or 9.")
 
 
 def get_user_name():
@@ -124,6 +125,21 @@ def save_user_profile(user_profile):
     print("User profile saved successfully.")
 
 
+def load_user_profile():
+    user_profile = {
+        "name": "",
+        "current_goal": ""
+    }
+
+    with open("profile.txt", "r") as file:
+        for line in file:
+            key, value = line.strip().split(": ", 1)
+            user_profile[key] = value
+
+    print("User profile loaded successfully.")
+    return user_profile
+
+
 def main():
     user_profile = {
     "name": "",
@@ -153,12 +169,15 @@ def main():
                 save_user_profile(user_profile)
 
         elif choice == "6":
+            user_profile = load_user_profile()
+        
+        elif choice == "7":
             show_study_plan()
 
-        elif choice == "7":
+        elif choice == "8":
             show_skills_to_learn()
 
-        elif choice == "8":
+        elif choice == "9":
           print("Goodbye!")
           break
 
