@@ -81,7 +81,7 @@ def show_study_plan():
     print("Today's study plan:")
 
     for index, task in enumerate(study_tasks, start=1):
-     print(f"{index} - {task}")
+        print(f"{index} - {task}")
 
 
 def show_skills_to_learn():
@@ -132,9 +132,20 @@ def load_user_profile():
     }
 
     with open("profile.txt", "r") as file:
-        for line in file:
-            key, value = line.strip().split(": ", 1)
-            user_profile[key] = value
+       for line in file:
+        line = line.strip()
+
+        if line == "":
+            continue
+
+        if ":" not in line:
+            continue
+
+        key, value = line.split(":", 1)
+        key = key.strip()
+        value = value.strip()
+        
+        user_profile[key] = value
 
     print("User profile loaded successfully.")
     return user_profile
@@ -142,9 +153,9 @@ def load_user_profile():
 
 def main():
     user_profile = {
-    "name": "",
-    "current_goal": ""
-}
+        "name": "",
+        "current_goal": ""
+    }
 
 
     show_welcome_message()
@@ -166,7 +177,7 @@ def main():
             show_user_profile(user_profile)
 
         elif choice == "5":
-                save_user_profile(user_profile)
+            save_user_profile(user_profile)
 
         elif choice == "6":
             user_profile = load_user_profile()
@@ -178,8 +189,8 @@ def main():
             show_skills_to_learn()
 
         elif choice == "9":
-          print("Goodbye!")
-          break
+            print("Goodbye!")
+            break
 
         print()
 
