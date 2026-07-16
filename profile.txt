@@ -1,2 +1,0 @@
-name: Marcello Bentes
-current_goal: Jáborar
