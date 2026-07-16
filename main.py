@@ -157,11 +157,7 @@ def load_user_profile():
 
 
 def main():
-    user_profile = {
-        "name": "",
-        "current_goal": ""
-    }
-
+    user_profile = load_user_profile()
 
     show_welcome_message()
 
