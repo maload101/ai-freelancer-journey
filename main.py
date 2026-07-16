@@ -129,11 +129,15 @@ def save_user_profile(user_profile):
     print("User profile saved successfully.")
 
 
-def load_user_profile():
-    user_profile = {
+def create_empty_user_profile():
+    return {
         "name": "",
         "current_goal": ""
     }
+
+
+def load_user_profile():
+    user_profile = create_empty_user_profile()
 
     try:
         with open(PROFILE_FILE, "r") as file:
