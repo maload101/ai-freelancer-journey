@@ -132,7 +132,9 @@ def save_user_profile(user_profile):
 def create_empty_user_profile():
     return {
         "name": "",
-        "current_goal": ""
+        "current_goal": "",
+        "level": "beginner",
+        "focus": "Automation and IA"
     }
 
 
@@ -141,7 +143,9 @@ def load_user_profile():
 
     try:
         with open(PROFILE_FILE, "r") as file:
-            user_profile = json.load(file)
+            saved_profile = json.load(file)
+
+        user_profile.update(saved_profile)
 
         print("Saved profile loaded.")
 
