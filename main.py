@@ -144,6 +144,9 @@ def load_user_profile():
     except FileNotFoundError:
         print("No saved profile found. Starting with an empty profile.")
 
+    except json.JSONDecodeError:
+        print("Saved profile is corrupted. Starting with an empty profile.")
+
     return user_profile
 
 
