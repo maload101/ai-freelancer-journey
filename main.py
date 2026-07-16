@@ -147,10 +147,10 @@ def load_user_profile():
 
                 user_profile[key] = value
 
-        print("User profile loaded successfully.")
+        print("Saved profile loaded.")
 
     except FileNotFoundError:
-        print("No saved profile found yet.")
+        print("No saved profile found. Starting with an empty profile.")
 
     return user_profile
 
