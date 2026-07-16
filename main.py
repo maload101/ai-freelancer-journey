@@ -9,7 +9,7 @@ def show_main_menu():
     print("2 - Set my current goal")
     print("3 - Show my current goal")
     print("4 - Show user profile")
-    print("5 - Save user profile")
+    print("5 - Save user profile manually")
     print("6 - Show today's study plan")
     print("7 - Show skills to learn")
     print("8 - Exit")
