@@ -1,3 +1,5 @@
+PROFILE_FILE = "profile.txt"
+
 def show_welcome_message():
     print("Welcome to AI Freelancer Journey!")
     print("Let's build useful projects and turn them into real opportunities.")
@@ -117,7 +119,7 @@ def show_user_profile(user_profile):
 
 
 def save_user_profile(user_profile):
-    with open("profile.txt", "w") as file:
+    with open(PROFILE_FILE, "w") as file:
         for key, value in user_profile.items():
             file.write(f"{key}: {value}\n")
 
@@ -131,7 +133,7 @@ def load_user_profile():
     }
 
     try:
-        with open("profile.txt", "r") as file:
+        with open(PROFILE_FILE, "r") as file:
             for line in file:
                 line = line.strip()
 
