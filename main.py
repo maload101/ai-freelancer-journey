@@ -137,20 +137,7 @@ def load_user_profile():
 
     try:
         with open(PROFILE_FILE, "r") as file:
-            for line in file:
-                line = line.strip()
-
-                if line == "":
-                    continue
-
-                if ":" not in line:
-                    continue
-
-                key, value = line.split(":", 1)
-                key = key.strip()
-                value = value.strip()
-
-                user_profile[key] = value
+            user_profile = json.load(file)
 
         print("Saved profile loaded.")
 
