@@ -167,9 +167,12 @@ def main():
 
         if choice == "1":
             user_profile["name"] = introduce_user()
+            save_user_profile(user_profile)
 
         elif choice == "2":
             user_profile["current_goal"] = set_current_goal()
+            save_user_profile(user_profile)
+
         elif choice == "3":
             show_current_goal(user_profile["current_goal"])
 

@@ -1,2 +1,2 @@
-name: Marcello
-current_goal: Já bora!
+name: Marcello Bentes
+current_goal: Jáborar
