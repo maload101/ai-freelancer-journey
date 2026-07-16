@@ -1,4 +1,8 @@
-PROFILE_FILE = "profile.txt"
+import json
+
+
+PROFILE_FILE = "profile.json"
+
 
 def show_welcome_message():
     print("Welcome to AI Freelancer Journey!")
@@ -120,8 +124,7 @@ def show_user_profile(user_profile):
 
 def save_user_profile(user_profile):
     with open(PROFILE_FILE, "w") as file:
-        for key, value in user_profile.items():
-            file.write(f"{key}: {value}\n")
+        json.dump(user_profile, file)
 
     print("User profile saved successfully.")
 
