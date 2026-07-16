@@ -131,23 +131,28 @@ def load_user_profile():
         "current_goal": ""
     }
 
-    with open("profile.txt", "r") as file:
-       for line in file:
-        line = line.strip()
+    try:
+        with open("profile.txt", "r") as file:
+            for line in file:
+                line = line.strip()
 
-        if line == "":
-            continue
+                if line == "":
+                    continue
 
-        if ":" not in line:
-            continue
+                if ":" not in line:
+                    continue
 
-        key, value = line.split(":", 1)
-        key = key.strip()
-        value = value.strip()
-        
-        user_profile[key] = value
+                key, value = line.split(":", 1)
+                key = key.strip()
+                value = value.strip()
 
-    print("User profile loaded successfully.")
+                user_profile[key] = value
+
+        print("User profile loaded successfully.")
+
+    except FileNotFoundError:
+        print("No saved profile found yet.")
+
     return user_profile
 
 
