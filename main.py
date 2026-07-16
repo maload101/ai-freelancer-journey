@@ -124,7 +124,7 @@ def show_user_profile(user_profile):
 
 def save_user_profile(user_profile):
     with open(PROFILE_FILE, "w") as file:
-        json.dump(user_profile, file)
+        json.dump(user_profile, file, indent=4)
 
     print("User profile saved successfully.")
 
