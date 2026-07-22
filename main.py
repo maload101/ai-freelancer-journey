@@ -14,15 +14,16 @@ def show_main_menu():
     print("1 - Introduce myself")
     print("2 - Set my current goal")
     print("3 - Set my current level")
-    print("4 - Show my current goal")
-    print("5 - Show user profile")
-    print("6 - Show today's study plan")
-    print("7 - Show skills to learn")
-    print("8 - Exit")
+    print("4 - Set my current focus")
+    print("5 - Show my current goal")
+    print("6 - Show user profile")
+    print("7 - Show today's study plan")
+    print("8 - Show skills to learn")
+    print("9 - Exit")
 
 
 def get_menu_choice():
-    valid_choices = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    valid_choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
     while True:
         choice = input("Choose an option: ").strip()
@@ -30,7 +31,7 @@ def get_menu_choice():
         if choice in valid_choices:
             return choice
 
-        print("Invalid option. Please choose 1, 2, 3, 4, 5, 6, 7, or 8.")
+        print("Invalid option. Please choose 1, 2, 3, 4, 5, 6, 7, 8, or 9.")
 
 
 def get_required_input(prompt, error_message):
@@ -77,6 +78,16 @@ def set_user_level():
 
     print(f"Your level is now: {level}")
     return level
+
+
+def set_user_focus():
+    focus = get_required_input(
+        "What is your current focus? ",
+        "Focus cannot be empty. Please try again."
+    )
+
+    print(f"Your focus is now: {focus}")
+    return focus
 
 
 def show_current_goal(goal):
@@ -195,18 +206,22 @@ def main():
             save_user_profile(user_profile)
 
         elif choice == "4":
-            show_current_goal(user_profile["current_goal"])
+            user_profile["focus"] = set_user_focus()
+            save_user_profile(user_profile)
 
         elif choice == "5":
-            show_user_profile(user_profile)
+            show_current_goal(user_profile["current_goal"])
 
         elif choice == "6":
-            show_study_plan()
+            show_user_profile(user_profile)
 
         elif choice == "7":
-            show_skills_to_learn()
+            show_study_plan()
 
         elif choice == "8":
+            show_skills_to_learn()
+
+        elif choice == "9":
             print("Goodbye!")
             break
         print()
