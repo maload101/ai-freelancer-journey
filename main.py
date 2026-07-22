@@ -3,6 +3,16 @@ import json
 
 PROFILE_FILE = "profile.json"
 
+OPTION_INTRODUCE_USER = "1"
+OPTION_SET_GOAL = "2"
+OPTION_SET_LEVEL = "3"
+OPTION_SET_FOCUS = "4"
+OPTION_SHOW_GOAL = "5"
+OPTION_SHOW_PROFILE = "6"
+OPTION_SHOW_STUDY_PLAN = "7"
+OPTION_SHOW_SKILLS = "8"
+OPTION_EXIT = "9"
+
 
 def show_welcome_message():
     print("Welcome to AI Freelancer Journey!")
@@ -23,7 +33,17 @@ def show_main_menu():
 
 
 def get_menu_choice():
-    valid_choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    valid_choices = [
+    OPTION_INTRODUCE_USER,
+    OPTION_SET_GOAL,
+    OPTION_SET_LEVEL,
+    OPTION_SET_FOCUS,
+    OPTION_SHOW_GOAL,
+    OPTION_SHOW_PROFILE,
+    OPTION_SHOW_STUDY_PLAN,
+    OPTION_SHOW_SKILLS,
+    OPTION_EXIT
+]
 
     while True:
         choice = input("Choose an option: ").strip()
@@ -196,35 +216,35 @@ def main():
 
         choice = get_menu_choice()
 
-        if choice == "1":
+        if choice == OPTION_INTRODUCE_USER:
             user_profile["name"] = introduce_user()
             save_user_profile(user_profile)
 
-        elif choice == "2":
+        elif choice == OPTION_SET_GOAL:
             user_profile["current_goal"] = set_current_goal()
             save_user_profile(user_profile)
 
-        elif choice == "3":
+        elif choice == OPTION_SET_LEVEL:
             user_profile["level"] = set_user_level()
             save_user_profile(user_profile)
 
-        elif choice == "4":
+        elif choice == OPTION_SET_FOCUS:
             user_profile["focus"] = set_user_focus()
             save_user_profile(user_profile)
 
-        elif choice == "5":
+        elif choice == OPTION_SHOW_GOAL:
             show_current_goal(user_profile["current_goal"])
 
-        elif choice == "6":
+        elif choice == OPTION_SHOW_PROFILE:
             show_user_profile(user_profile)
 
-        elif choice == "7":
+        elif choice == OPTION_SHOW_STUDY_PLAN:
             show_study_plan()
 
-        elif choice == "8":
+        elif choice == OPTION_SHOW_SKILLS:
             show_skills_to_learn()
 
-        elif choice == "9":
+        elif choice == OPTION_EXIT:
             print("Goodbye!")
             break
         print()
