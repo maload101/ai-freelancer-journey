@@ -33,14 +33,21 @@ def get_menu_choice():
         print("Invalid option. Please choose 1, 2, 3, 4, 5, 6, 7 or 8.")
 
 
-def get_user_name():
+def get_required_input(prompt, error_message):
     while True:
-        name = input("What is your name? ").strip()
+        value = input(prompt).strip()
 
-        if name != "":
-            return name
+        if value != "":
+            return value
 
-        print("Name cannot be empty. Please try again.")
+        print(error_message)
+
+
+def get_user_name():
+    return get_required_input(
+        "What is your name? ",
+        "Name cannot be empty. Please try again."
+    )
 
 
 def introduce_user():
@@ -50,13 +57,10 @@ def introduce_user():
 
 
 def get_current_goal():
-    while True:
-        goal = input("What is your current goal? ").strip()
-
-        if goal != "":
-            return goal
-
-        print("Goal cannot be empty. Please try again.")
+    return get_required_input(
+        "What is your current goal? ",
+        "Goal cannot be empty. Please try again."
+    )
 
 
 def set_current_goal():
