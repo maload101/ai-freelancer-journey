@@ -15,14 +15,13 @@ def show_main_menu():
     print("2 - Set my current goal")
     print("3 - Show my current goal")
     print("4 - Show user profile")
-    print("5 - Save user profile manually")
-    print("6 - Show today's study plan")
-    print("7 - Show skills to learn")
-    print("8 - Exit")
+    print("5 - Show today's study plan")
+    print("6 - Show skills to learn")
+    print("7 - Exit")
 
 
 def get_menu_choice():
-    valid_choices = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    valid_choices = ["1", "2", "3", "4", "5", "6", "7"]
 
     while True:
         choice = input("Choose an option: ").strip()
@@ -30,7 +29,7 @@ def get_menu_choice():
         if choice in valid_choices:
             return choice
 
-        print("Invalid option. Please choose 1, 2, 3, 4, 5, 6, 7 or 8.")
+        print("Invalid option. Please choose 1, 2, 3, 4, 5, 6, or 7.")
 
 
 def get_required_input(prompt, error_message):
@@ -185,17 +184,14 @@ def main():
 
         elif choice == "4":
             show_user_profile(user_profile)
-
-        elif choice == "5":
-            save_user_profile(user_profile)
         
-        elif choice == "6":
+        elif choice == "5":
             show_study_plan()
 
-        elif choice == "7":
+        elif choice == "6":
             show_skills_to_learn()
 
-        elif choice == "8":
+        elif choice == "7":
             print("Goodbye!")
             break
 
