@@ -34,6 +34,12 @@ def get_menu_choice():
         print("Invalid option. Please choose 1, 2, 3, 4, 5, 6, 7, 8, or 9.")
 
 
+def set_profile_field(prompt, error_message, confirmation_message):
+    value = get_required_input(prompt, error_message)
+    print(f"{confirmation_message}: {value}")
+    return value
+
+
 def get_required_input(prompt, error_message):
     while True:
         value = input(prompt).strip()
@@ -65,30 +71,27 @@ def get_current_goal():
 
 
 def set_current_goal():
-    goal = get_current_goal()
-    print(f"Your current goal is now: {goal}")
-    return goal
+    return set_profile_field(
+        "What is your current goal? ",
+        "Goal cannot be empty. Please try again.",
+        "Your current goal is now"
+    )
 
 
 def set_user_level():
-    level = get_required_input(
+    return set_profile_field(
         "What is your current level? ",
-        "Level cannot be empty. Please try again."
+        "Level cannot be empty. Please try again.",
+        "Your level is now"
     )
-
-    print(f"Your level is now: {level}")
-    return level
 
 
 def set_user_focus():
-    focus = get_required_input(
+    return set_profile_field(
         "What is your current focus? ",
-        "Focus cannot be empty. Please try again."
+        "Focus cannot be empty. Please try again.",
+        "Your focus is now"
     )
-
-    print(f"Your focus is now: {focus}")
-    return focus
-
 
 def show_current_goal(goal):
     if goal == "":
